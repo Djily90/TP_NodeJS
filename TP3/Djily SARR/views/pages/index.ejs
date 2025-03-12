@@ -3,21 +3,17 @@
 
 <h2>Liste des Événements</h2>
 <ul>
-  <% events.forEach(event=> { %>
-  <li>
-    <strong>
-      <%= event.title %>
-    </strong> - <%= event.date %>
-    <p>
-      <%= event.description %>
-    </p>
-    <% if (event.status==='actif' ) { %>
-    <p>Statut: <span style="color: green;">Actif</span></p>
-    <% } else { %>
-    <p>Statut: <span style="color: red;">Inactif</span></p>
-    <% } %>
-  </li>
-  <% }); %>
+    <% events.forEach(event => { %>
+        <li>
+            <strong><%= event.title %></strong> - <%= event.date %>
+            <p><%= event.description %></p>
+            <% if (event.status === 'actif') { %>
+                <p>Statut: <span class="actif">Actif</span></p>
+            <% } else { %>
+                <p>Statut: <span class="inactif">Inactif</span></p>
+            <% } %>
+        </li>
+    <% }); %>
 </ul>
 
 <%- include('../partials/footer') %>
