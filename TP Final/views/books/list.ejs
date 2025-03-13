@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1> Liste des livres</h1>
+    <a href="/books/new" class="btn btn-primary">Ajouter un livre</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Année</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% books.forEach(book => { %>
+                <tr>
+                    <td><%= book.title %></td>
+                    <td><%= book.author %></td>
+                    <td><%= book.year %></td>
+                    <td>
+                        <a href="/books/<%= book._id %>" class="btn btn-info">Détails</a>
+                        <a href="/books/<%= book._id %>/edit" class="btn btn-warning">Modifier</a>
+                        <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer') %>

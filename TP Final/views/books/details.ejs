@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1>Détails du livre</h1>
+    <p><strong>Titre :</strong> <%= book.title %></p>
+    <p><strong>Auteur :</strong> <%= book.author %></p>
+    <p><strong>Année :</strong> <%= book.year %></p>
+    <p><strong>Résumé :</strong> <%= book.summary || "Aucun résumé disponible." %></p>
+    <a href="/books" class="btn btn-secondary">Retour</a>
+</div>
+
+<%- include('../partials/footer') %>
